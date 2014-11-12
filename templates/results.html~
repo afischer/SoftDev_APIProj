@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/slate/bootstrap.min.css">
+  <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
+  <title>APIs</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+	<center><h1>Restaurants </h1></center>
+	{% for restaurant in restaurants %}
+	<div class="panel">
+	  <div class="panel-heading">
+	    {{restaurant[0]}}
+	  </div>
+	  {% for field in restaurant[1:] %}
+	  <div class="panel-body">
+	    {{field}}
+	  </div>
+	  {%endfor %}
+	</div>
+	{% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

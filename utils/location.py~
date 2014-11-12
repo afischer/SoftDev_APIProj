@@ -15,20 +15,20 @@ dump = ast.literal_eval(json.dumps(data))
 #print dump
 
 city = dump.get("city")
-z = dump.get("zipcode")
+zip = dump.get("zipcode")
 lat = dump.get("latitude")
-lon = dump.get("longitude")
+long = dump.get("longitude")
 
 def getLat():
     print lat
     return lat
 
 def getLong():
-    print lon
-    return lon
+    print long
+    return long
 
 def getZip():
-    print z
-    return z
+    print zip
+    return zip
 
 

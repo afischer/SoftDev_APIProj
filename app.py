@@ -5,13 +5,27 @@ from utils import location, restData
 app = Flask(__name__)
 
 # Default route, print user's IP
-@app.route('/')
+@app.route('/', methods=['Post','GET'])
 def home():
-    ip = location.ip
-    print "USER IP ADDRESS: " + ip
-    
-    return render_template('home.html')
+    if request.method == 'GET':
+        ip = location.ip
+        print "USER IP ADDRESS: " + ip
+        return render_template('home.html')
+    else:
+       # L=restData.makeList()
+        L=[[mcd,www.mcd.com],[bking,www.bking.com]]
+        print L
+        #restaurants=restData.getPriceLevel(1,L)
+        return render_template('results.html',restaurants=L)
 
+@app.route('/results')
+def results():
+    #L=restData.makeList()
+    L=[[mcd,www.mcd.com],[bking,www.bking.com]]
+    print L
+    #restaurants=restData.getPriceLevel(1,L)
+    return render_template('results.html',restaurants=L)
+  
 
 
 if __name__ == '__main__':

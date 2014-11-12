@@ -2,26 +2,35 @@
 
 <html>
   <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/slate/bootstrap.min.css">
-  <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
-  <title>APIs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/slate/bootstrap.min.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
+    <title>APIs</title>
   </head>
 
   <body>
     <div class="container">
       <div class="jumbotron">
-	<center><h1>API PROJECT</h1></center>
+	<center><h1>Restaurants in Your Area</h1></center>
 	<div class="panel panel-primary">
 	  <div class="panel-heading">
 	    <h4> How much do you want to spend? </h4>
 	  </div>
-
 	  <div class="panel-body">
-	    <form method="GET">
-	      <input class="form-control" type="text" 
-		     name="price" placeholder="$100">
-	      <br>
-	      <button type="submit" class="btn btn-info"> Submit </button>
+	    <div class="btn-group">
+	      <a href="#" class="btn btn-info">Info</a>
+	      <a href="#" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+	      <ul class="dropdown-menu">
+		<li><a href="#">Action</a></li>
+		<li><a href="#">Another action</a></li>
+		<li><a href="#">Something else here</a></li>
+		<li class="divider"></li>
+		<li><a href="#">Separated link</a></li>
+	      </ul>
+	    </div>
+	    <br>
+	    <form action="/" method="POST">
+	      <button type="submit" name="submit" class="btn btn-info">Submit
+	      </button>
 	    </form>
 	  </div>
 	</div>
