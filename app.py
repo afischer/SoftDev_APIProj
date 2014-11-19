@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from utils import location, restData
 
 # Initialize the Flask application
@@ -12,19 +12,15 @@ def home():
         print "USER IP ADDRESS: " + ip
         return render_template('home.html')
     else:
-       # L=restData.makeList()
-        L=[[mcd,www.mcd.com],[bking,www.bking.com]]
-        print L
-        #restaurants=restData.getPriceLevel(1,L)
-        return render_template('results.html',restaurants=L)
+        return redirect('/results')
 
 @app.route('/results')
 def results():
-    #L=restData.makeList()
-    L=[[mcd,www.mcd.com],[bking,www.bking.com]]
-    print L
-    #restaurants=restData.getPriceLevel(1,L)
-    return render_template('results.html',restaurants=L)
+    L=restData.makeList()
+    # L=[[mcd,www.mcd.com],[bking,www.bking.com]]
+    # print L
+    restaurants=restData.getPriceLevel(1,L)#change the 1 to reflect the radio button
+    return render_template('results.html',restaurants=restaurants)
   
 
 
